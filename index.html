@@ -74,15 +74,37 @@ nav .btn{padding:11px 20px;font-size:15px}
   .collage .c{width:150px;height:220px}
 }
 
-.collage .r{position:absolute;z-index:7;width:300px;border-radius:12px;overflow:hidden;border:1px solid #d9dce3;background:#fff;box-shadow:0 24px 40px -22px rgba(14,20,33,.4)}
-.collage .r img{width:100%;display:block}
+.collage .r{position:absolute;z-index:7;width:250px;border-radius:16px;border:1px solid #d9dce3;background:#fff;box-shadow:0 24px 40px -22px rgba(14,20,33,.45);padding:16px 18px;display:grid;gap:6px}
+.collage .r b{font-size:38px;line-height:1;letter-spacing:-.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.collage .r .k{font-size:12.5px;color:var(--muted)}
+.collage .r .s{height:8px;border-radius:99px;background:#eef0f4;overflow:hidden}.collage .r .s i{display:block;height:100%;background:var(--grad)}
+.collage .r .pill{justify-self:start;font-size:12.5px;font-weight:700;color:#0b7a4b;background:#e6f8ef;border-radius:999px;padding:4px 10px}
 .collage .r1{left:-4%;top:34%;transform:rotate(-2deg)}
 .collage .r2{left:46%;top:74%;transform:rotate(2deg)}
 .poprail{gap:28px;align-items:stretch}
 .popup-shot{flex:0 0 auto;height:260px;border-radius:14px;overflow:hidden;border:1.5px solid rgba(14,20,33,.55);background:#fff;transition:transform .3s ease}
 .popup-shot:hover{transform:translateY(-10px)}
 .popup-shot img{display:block;height:100%;width:auto;pointer-events:none;-webkit-user-drag:none;user-select:none}
-.resgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1080px;margin:0 auto}
+.resgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:1080px;margin:0 auto}
+.rc{background:#fff;border:1px solid var(--rule);border-radius:22px;padding:30px 30px 26px;display:grid;gap:10px;align-content:start;box-shadow:0 30px 60px -44px rgba(14,20,33,.45)}
+.rc .when{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rc .big{font-size:clamp(44px,5.4vw,68px);line-height:1;letter-spacing:-.045em;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.rc .cap{color:var(--ink2);font-size:16.5px}
+.share{display:grid;gap:8px;margin-top:8px;padding-top:16px;border-top:1px solid var(--rule);font-size:15px;color:var(--ink2)}
+.share b{color:var(--ink)}
+.sh{height:10px;border-radius:99px;background:#eef0f4;overflow:hidden}
+.sh i{display:block;height:100%;border-radius:99px;background:var(--grad);transform-origin:left;transform:scaleX(0);transition:transform 1.4s .2s cubic-bezier(.3,.7,.2,1)}
+.rc.in .sh i{transform:scaleX(1)}
+.rc .pill{justify-self:start;margin-top:6px;font-size:13.5px;font-weight:600;color:#0b7a4b;background:#e6f8ef;border:1px solid #c5eed8;border-radius:999px;padding:6px 12px}
+.rc.wide{grid-column:1 / -1;grid-template-columns:1fr 1.2fr;align-items:center;gap:28px;background:var(--ink);border-color:var(--ink)}
+.rc.wide .when{color:rgba(255,255,255,.6)}.rc.wide .cap{color:rgba(255,255,255,.8)}
+.rc.wide>div:first-child{display:grid;gap:10px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.trio div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px}
+.trio b{display:block;color:#fff;font-size:28px;letter-spacing:-.03em}
+.trio span{color:rgba(255,255,255,.65);font-size:13.5px}
+@media(max-width:760px){.rc.wide{grid-template-columns:1fr}.trio b{font-size:22px}}
+#results{padding-bottom:30px}#process{padding-top:56px}
 .res{margin:0;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:10px;box-shadow:0 20px 40px -30px rgba(14,20,33,.35)}
 .res img{width:100%;display:block;border-radius:8px}
 .resnote{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
@@ -140,13 +162,20 @@ section.bg-emails{position:relative;overflow:hidden;padding:64px 0 56px;backgrou
 .getgrid .say .hand{font-size:27px;display:inline-block;transform:rotate(-3deg);color:#e0603f;margin-top:8px}
 .till{position:relative;justify-self:center;width:min(100%,430px)}
 .slot{height:14px;border-radius:999px;background:var(--ink);margin:0 -14px;position:relative;z-index:2;box-shadow:0 6px 14px -6px rgba(0,0,0,.5)}
-.paperbox{overflow:hidden;margin-top:-7px;padding:0 6px 30px}
-.receipt{background:var(--paper);color:var(--paperInk);font-family:var(--mono);font-size:14px;line-height:1.5;padding:30px 24px 26px;transform:translateY(-102%);transition:transform 2.6s cubic-bezier(.3,.7,.2,1);
+.paperbox{overflow:hidden;margin-top:-7px;padding:0 6px 40px;position:relative}
+.receipt{position:relative;background:radial-gradient(rgba(35,32,26,.035) 1px,transparent 1.2px) 0 0/5px 5px,linear-gradient(180deg,#fffef9,#fbf7ea);color:var(--paperInk);font-family:var(--mono);font-size:14px;line-height:1.5;padding:30px 24px 26px;transform:translateY(-102%);transition:transform 2.6s cubic-bezier(.3,.7,.2,1);
   -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 100%;filter:drop-shadow(0 18px 22px rgba(14,20,33,.18))}
 .till.printed .receipt{transform:translateY(0) rotate(-1.4deg)}
 .till:hover .receipt{transform:translateY(0)}
 .receipt .head{text-align:center;display:grid;gap:2px;margin-bottom:14px}
-.receipt .head b{font-size:18px;letter-spacing:.12em}
+.receipt .head b{font-size:20px;letter-spacing:.14em}
+.receipt .logo{font-size:30px;line-height:1;margin-bottom:4px}
+.receipt .order{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.06em;margin-top:6px}
+.line .q{width:24px;flex:none;color:#8a8270}
+.receipt .tot{border-top:2px solid var(--paperInk);border-bottom:2px solid var(--paperInk);padding:8px 0;margin-top:10px}
+.stamp{position:absolute;right:22px;bottom:268px;border:3px solid #d4402b;color:#d4402b;font-family:var(--sans);font-weight:800;font-size:19px;letter-spacing:.08em;line-height:1.05;text-align:center;padding:8px 12px;border-radius:8px;transform:rotate(-14deg) scale(1.6);opacity:0;transition:opacity .25s 2.6s,transform .35s 2.6s cubic-bezier(.2,1.6,.4,1);mix-blend-mode:multiply}
+.stamp small{display:block;font-size:10px;letter-spacing:.12em;margin-top:3px;font-weight:700}
+.till.printed .stamp{opacity:.85;transform:rotate(-14deg) scale(1)}
 .receipt .meta{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
 .receipt hr{border:0;border-top:1.5px dashed var(--paperRule);margin:12px 0}
 .line{display:flex;align-items:baseline;gap:8px}
@@ -208,8 +237,8 @@ footer a{text-decoration:none}
     <div class="c c3"><img src="work/odyssey-2026-10-30-flow-ns4.jpg" alt="" loading="eager" decoding="async"></div>
     <div class="c c4"><img src="work/fg-endless-proof.jpg" alt="" loading="eager" decoding="async"></div>
     <div class="c c5"><img src="work/fg-sbg-diet-coke-club.jpg" alt="" loading="eager" decoding="async"></div>
-    <div class="r r1"><img src="work/res-533k.png" alt="" loading="eager" decoding="async"></div>
-    <div class="r r2"><img src="work/res-143k.png" alt="" loading="eager" decoding="async"></div>
+    <div class="r r1"><span class="k">Total revenue, one month</span><b>$533K</b><span class="s"><i style="width:46%"></i></span><span class="k">46% of it from email + SMS</span></div>
+    <div class="r r2"><span class="pill">&#8599; 390%</span><b>$143K</b><span class="k">store revenue vs the same month last year</span></div>
     <span class="tag">real dashboards, real emails</span>
   </div>
 </div></header>
@@ -226,20 +255,20 @@ footer a{text-decoration:none}
     <div class="bg-tile" style="top:3%;left:20%;transform:rotate(8deg);background-image:url(work/fg-griptec-christmas.jpg)"></div>
     <div class="bg-tile" style="top:1%;left:40%;transform:rotate(-4deg);background-image:url(work/p8.jpg)"></div>
     <div class="bg-tile" style="top:3%;left:60%;transform:rotate(11deg);background-image:url(work/fg-endless-shipping.jpg)"></div>
-    <div class="bg-tile" style="top:1%;right:1%;transform:rotate(-7deg);background-image:url(work/fg-sbg-spooky.jpg)"></div>
-    <div class="bg-tile" style="top:28%;left:-3%;transform:rotate(6deg);background-image:url(work/odyssey-2026-10-30-flow-ns1.jpg)"></div>
-    <div class="bg-tile" style="top:30%;left:18%;transform:rotate(-13deg);background-image:url(work/deko-cocktails-2026-11-14-bf-education-4.jpg)"></div>
-    <div class="bg-tile" style="top:28%;left:38%;transform:rotate(10deg);background-image:url(work/knenest-2026-11-03-airnest-travel-launch.jpg)"></div>
-    <div class="bg-tile" style="top:30%;left:58%;transform:rotate(-5deg);background-image:url(work/fg-endless-proof.jpg)"></div>
-    <div class="bg-tile" style="top:28%;right:-3%;transform:rotate(12deg);background-image:url(work/deko-cocktails-2026-11-27-bf-launch.jpg)"></div>
-    <div class="bg-tile" style="top:56%;left:1%;transform:rotate(-8deg);background-image:url(work/odyssey-2026-10-30-flow-q5.jpg)"></div>
-    <div class="bg-tile" style="top:58%;left:21%;transform:rotate(13deg);background-image:url(work/fg-pe-planet-euphoria.jpg)"></div>
-    <div class="bg-tile" style="top:56%;left:41%;transform:rotate(-3deg);background-image:url(work/fg-pe-group-chat.jpg)"></div>
-    <div class="bg-tile" style="top:58%;left:61%;transform:rotate(7deg);background-image:url(work/fg-maternal-welcome.jpg)"></div>
-    <div class="bg-tile" style="top:56%;right:1%;transform:rotate(-12deg);background-image:url(work/odyssey-2026-10-30-flow-ns2.jpg)"></div>
-    <div class="bg-tile" style="bottom:1%;left:8%;transform:rotate(8deg);background-image:url(work/p5.jpg)"></div>
-    <div class="bg-tile" style="bottom:3%;left:38%;transform:rotate(-11deg);background-image:url(work/fg-sbg-diet-coke-club.jpg)"></div>
-    <div class="bg-tile" style="bottom:1%;right:8%;transform:rotate(4deg);background-image:url(work/fg-doze-wind-down.jpg)"></div>
+    <div class="bg-tile" style="top:1%;right:1%;transform:rotate(-7deg);background-image:url(work/fg-eatwell-price.jpg)"></div>
+    <div class="bg-tile" style="top:28%;left:-3%;transform:rotate(6deg);background-image:url(work/fg-livelong-work-harder.jpg)"></div>
+    <div class="bg-tile" style="top:30%;left:18%;transform:rotate(-13deg);background-image:url(work/lambwolf-2026-11-26-thankful-for-the-pack.jpg)"></div>
+    <div class="bg-tile" style="top:28%;left:38%;transform:rotate(10deg);background-image:url(work/p5.jpg)"></div>
+    <div class="bg-tile" style="top:30%;left:58%;transform:rotate(-5deg);background-image:url(work/fg-sbg-diet-coke-club.jpg)"></div>
+    <div class="bg-tile" style="top:28%;right:-3%;transform:rotate(12deg);background-image:url(work/fg-doze-wind-down.jpg)"></div>
+    <div class="bg-tile" style="top:56%;left:1%;transform:rotate(-8deg);background-image:url(work/factory-direct-supply-2026-11-06-diablo-blade-check.jpg)"></div>
+    <div class="bg-tile" style="top:58%;left:21%;transform:rotate(13deg);background-image:url(work/fg-sbg-spooky.jpg)"></div>
+    <div class="bg-tile" style="top:56%;left:41%;transform:rotate(-3deg);background-image:url(work/odyssey-2026-10-30-flow-ns1.jpg)"></div>
+    <div class="bg-tile" style="top:58%;left:61%;transform:rotate(7deg);background-image:url(work/deko-cocktails-2026-11-14-bf-education-4.jpg)"></div>
+    <div class="bg-tile" style="top:56%;right:1%;transform:rotate(-12deg);background-image:url(work/p9.jpg)"></div>
+    <div class="bg-tile" style="bottom:1%;left:8%;transform:rotate(8deg);background-image:url(work/odyssey-2026-10-30-flow-ns4.jpg)"></div>
+    <div class="bg-tile" style="bottom:3%;left:38%;transform:rotate(-11deg);background-image:url(work/fg-livelong-proudly.jpg)"></div>
+    <div class="bg-tile" style="bottom:1%;right:8%;transform:rotate(4deg);background-image:url(work/fg-maternal-google-search.jpg)"></div>
   </div>
   <div class="wrap block-head">
     <h2 class="work-headline">Want to see the whole email? Go on, scroll all of it</h2>
@@ -263,7 +292,6 @@ footer a{text-decoration:none}
       <article class="email-card"><div class="email-scroll"><img src="work/fg-maternal-google-search.jpg" alt="What every athlete is searching for (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-06-diablo-blade-check.jpg" alt="Factory Direct Supply: a dull blade costs you more (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/fg-endless-shipping.jpg" alt="Endless: shipping, returns and everything in between (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-25-bestsellers-going-fast.jpg" alt="Lambwolf: bestsellers are going fast (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/fg-pe-planet-euphoria.jpg" alt="The story behind Planet Euphoria (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/p1.jpg" alt="Welcome discount with tea pouring down the page (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
     </div>
@@ -284,14 +312,8 @@ footer a{text-decoration:none}
       <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns2.jpg" alt="Odyssey: the real reason you keep going back (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/fg-maternal-family.jpg" alt="Maternal: we built this for our family (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-26-bfcm-launch.jpg" alt="Factory Direct Supply: free Visa gift cards (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/knenest-2026-11-03-airnest-travel-launch.jpg" alt="Knenest: meet Airnest (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/p9.jpg" alt="A quiz flowchart to pick the right pack (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/p5.jpg" alt="Coffee welcome with a mystery code (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-    </div>
-    <div class="rail poprail" id="rail3" tabindex="0" aria-label="Pop-ups I built">
-      <div class="popup-shot"><img src="work/popup-mystery-quiz.jpg" alt="Pop-up: mystery discount picked by goal" loading="lazy" decoding="async" draggable="false"></div>
-      <div class="popup-shot"><img src="work/popup-watch.jpg" alt="Pop-up: mystery discount for watch collectors" loading="lazy" decoding="async" draggable="false"></div>
-      <div class="popup-shot"><img src="work/popup-raw-dog.jpg" alt="Pop-up: welcome offer for raw dog food" loading="lazy" decoding="async" draggable="false"></div>
     </div>
   </div>
   <div class="section-cta"><a class="btn" href="#book">Get emails like these <span aria-hidden="true">&rarr;</span></a></div>
@@ -299,22 +321,30 @@ footer a{text-decoration:none}
 
 <section class="block" id="results">
   <div class="wrap">
-    <div class="block-head reveal"><h2>The numbers, straight out of Klaviyo</h2><p>Screenshots from brands I've run email for. Same dashboards you'd see in your own account, nothing redrawn.</p></div>
+    <div class="block-head reveal"><h2>What the numbers look like</h2><p>Real months from brands I run email for. Same figures you'd see in your own Klaviyo.</p></div>
     <div class="resgrid">
-      <figure class="res reveal"><img src="work/res-533k.png" alt="Klaviyo summary: $533,075 total revenue, $244,515 from email and SMS, 45.87% of total, up 45%" loading="lazy" decoding="async"></figure>
-      <figure class="res reveal"><img src="work/res-184k.png" alt="Klaviyo summary: $184,099 total revenue, up 1533% on last year, $55,559 from email" loading="lazy" decoding="async"></figure>
-      <figure class="res reveal"><img src="work/res-143k.png" alt="Klaviyo summary: $143,173 total revenue, up 390% on last year, $61,665 from email, up 7591%" loading="lazy" decoding="async"></figure>
-      <figure class="res reveal"><img src="work/res-115k.png" alt="Klaviyo summary: 115,790 pounds total revenue, 37,525 pounds from email" loading="lazy" decoding="async"></figure>
-      <figure class="res reveal"><img src="work/res-102k.png" alt="Klaviyo summary: $102,302 total revenue, $14,921 from email" loading="lazy" decoding="async"></figure>
-      <figure class="res reveal"><img src="work/res-popup-15pct.png" alt="Klaviyo pop-up: 15.03% submit rate, 13K sign-ups, 32K pounds revenue" loading="lazy" decoding="async"></figure>
+      <article class="rc reveal"><span class="when">June 2026</span><b class="big">$533K</b><span class="cap">total store revenue in one month</span>
+        <div class="share"><div class="sh"><i style="width:46%"></i></div><span><b>$244K</b> came from email + SMS, 46% of everything</span></div>
+        <span class="pill">&#8599; 45% more from email than the month before</span></article>
+      <article class="rc reveal"><span class="when">Apr to May 2026</span><b class="big">&#8599; 1,533%</b><span class="cap">store revenue against the same month last year, $184K</span>
+        <div class="share"><div class="sh"><i style="width:30%"></i></div><span><b>$55.6K</b> from email, 30% of the month</span></div>
+        <span class="pill">Welcome flow alone: $27.7K</span></article>
+      <article class="rc reveal"><span class="when">Apr to May 2026</span><b class="big">$61.7K</b><span class="cap">from email in a month, 77x the same month last year</span>
+        <div class="share"><div class="sh"><i style="width:43%"></i></div><span><b>43%</b> of a $143K month, up 390% on last year</span></div>
+        <span class="pill">Flows and campaigns split almost 50/50</span></article>
+      <article class="rc reveal"><span class="when">Apr to May 2026</span><b class="big">&pound;116K</b><span class="cap">total store revenue in one month</span>
+        <div class="share"><div class="sh"><i style="width:32%"></i></div><span><b>&pound;37.5K</b> from email, 32% of the month</span></div>
+        <span class="pill">&#8599; 7% from email vs the month before</span></article>
+      <article class="rc wide reveal"><div><span class="when">Sign-up pop-up</span><b class="big">15.03%</b><span class="cap">of visitors joined the list. Klaviyo rates that "Excellent".</span></div>
+        <div class="trio"><div><b>13K</b><span>new subscribers</span></div><div><b>84K</b><span>people saw it</span></div><div><b>&pound;32K</b><span>revenue from them</span></div></div></article>
     </div>
-    <p class="resnote">Brand names left out on purpose. Ask me on the call and I'll walk you through any of them.</p>
+    <p class="resnote">No brand names on here, on purpose. Ask me on the call and I'll walk you through any of them.</p>
   </div>
 </section>
 
 <section class="block" id="process">
   <div class="wrap">
-    <div class="block-head reveal"><h2>Why me</h2><p>There are a lot of email people out there. Here's what's different when it's me.</p></div>
+    <div class="block-head reveal"><h2>Why brands stay with me</h2><p>Two years on average. It usually comes down to these three things.</p></div>
     <div class="steps">
       <div class="step reveal"><div class="when">Before we talk<b>01</b></div><div>
         <h3>I've already left something in your cart.</h3>
@@ -349,24 +379,24 @@ footer a{text-decoration:none}
       <div class="slot" aria-hidden="true"></div>
       <div class="paperbox">
         <div class="receipt" role="img" aria-label="A receipt. Welcome email rewritten: free. Every other email: monthly. Flows, weekly sends, list care and inbox placement included. No account managers, no contract. 100 plus brands before you, about 25 in fashion, brands stay 2 years on average. Due today: nothing. Paid from month one, month to month.">
-          <div class="head"><b>GUIDO ROOK</b><span>EMAIL FOR SHOPIFY BRANDS</span><span>ITALY</span></div>
+          <div class="head"><span class="logo" aria-hidden="true">&#9820;</span><b>GUIDO ROOK</b><span>EMAIL FOR SHOPIFY BRANDS</span><span>ITALY</span><div class="order"><span>ORDER #0001</span><span>SERVED BY: GUIDO</span></div></div>
           <div class="meta"><span>For: <span id="who">your brand</span></span><span id="day"></span></div>
           <hr>
-          <div class="line"><span class="l">Welcome email, rewritten</span><span class="dots"></span><span class="r">0.00<i class="circle"></i></span></div>
-          <div class="line"><span class="l">Every other email</span><span class="dots"></span><span class="r">MONTHLY</span></div>
-          <div class="line"><span class="l">Flows + weekly sends</span><span class="dots"></span><span class="r">INCL.</span></div>
-          <div class="line"><span class="l">Design for every send</span><span class="dots"></span><span class="r">INCL.</span></div>
-          <div class="line"><span class="l">List + landing in the inbox</span><span class="dots"></span><span class="r">INCL.</span></div>
-          <div class="line"><span class="l">Monthly report, in English</span><span class="dots"></span><span class="r">INCL.</span></div>
-          <div class="line"><span class="l">Account managers</span><span class="dots"></span><span class="r">0</span></div>
-          <div class="line"><span class="l">Contract</span><span class="dots"></span><span class="r">NONE</span></div>
+          <div class="line"><span class="q">1</span><span class="l">Welcome email, rewritten</span><span class="dots"></span><span class="r">0.00<i class="circle"></i></span></div>
+          <div class="line"><span class="q">1</span><span class="l">Every other email</span><span class="dots"></span><span class="r">MONTHLY</span></div>
+          <div class="line"><span class="q">1</span><span class="l">Flows + weekly sends</span><span class="dots"></span><span class="r">INCL.</span></div>
+          <div class="line"><span class="q">1</span><span class="l">Design for every send</span><span class="dots"></span><span class="r">INCL.</span></div>
+          <div class="line"><span class="q">1</span><span class="l">List + landing in the inbox</span><span class="dots"></span><span class="r">INCL.</span></div>
+          <div class="line"><span class="q">1</span><span class="l">Monthly report, in English</span><span class="dots"></span><span class="r">INCL.</span></div>
+          <div class="line"><span class="q"></span><span class="l">Account managers</span><span class="dots"></span><span class="r">0</span></div>
+          <div class="line"><span class="q"></span><span class="l">Contract</span><span class="dots"></span><span class="r">NONE</span></div>
           <hr>
-          <div class="line"><span class="l">Brands before you</span><span class="dots"></span><span class="r">100+</span></div>
-          <div class="line"><span class="l">Fashion ones</span><span class="dots"></span><span class="r">~25</span></div>
-          <div class="line"><span class="l">Average stay</span><span class="dots"></span><span class="r">2 YRS</span></div>
+          <div class="line"><span class="q"></span><span class="l">Brands before you</span><span class="dots"></span><span class="r">100+</span></div>
+          <div class="line"><span class="q"></span><span class="l">Fashion ones</span><span class="dots"></span><span class="r">~25</span></div>
+          <div class="line"><span class="q"></span><span class="l">Average stay</span><span class="dots"></span><span class="r">2 YRS</span></div>
           <hr>
-          <div class="line total"><span class="l">DUE TODAY</span><span class="dots"></span><span class="r">0.00</span></div>
-          <small>paid from month one. month to month.</small>
+          <div class="tot"><div class="line total"><span class="q"></span><span class="l">DUE TODAY</span><span class="dots"></span><span class="r">0.00</span></div>
+          </div><small>paid from month one. month to month.</small><div class="stamp" aria-hidden="true">NO<br>CONTRACT<small>CANCEL ANY MONTH</small></div>
           <div class="bar" aria-hidden="true"></div>
           <div class="bye">Keep this for your records. Or don't.</div>
         </div>
