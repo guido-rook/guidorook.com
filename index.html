@@ -67,13 +67,27 @@ nav .btn{padding:11px 20px;font-size:15px}
 .collage .c4{left:12%;top:50%;transform:rotate(5deg);z-index:3}
 .collage .c5{left:50%;top:46%;transform:rotate(-5deg);z-index:4}
 .collage .c1:hover{transform:rotate(-7deg) translateY(-10px)}.collage .c2:hover{transform:rotate(4deg) translateY(-10px)}.collage .c3:hover{transform:rotate(-3deg) translateY(-10px)}.collage .c4:hover{transform:rotate(5deg) translateY(-10px)}.collage .c5:hover{transform:rotate(-5deg) translateY(-10px)}
-.collage .tag{position:absolute;left:58%;top:88%;z-index:6;font-family:var(--hand);font-size:26px;font-weight:700;color:var(--ink2);transform:rotate(-4deg);white-space:nowrap}
+.collage .tag{position:absolute;left:2%;top:96%;z-index:6;font-family:var(--hand);font-size:26px;font-weight:700;color:var(--ink2);transform:rotate(-4deg);white-space:nowrap}
 @media(max-width:980px){
   .hero .wrap{grid-template-columns:1fr}
   .collage{height:420px;max-width:560px;width:100%;justify-self:center}
   .collage .c{width:150px;height:220px}
 }
 
+.collage .r{position:absolute;z-index:7;width:300px;border-radius:12px;overflow:hidden;border:1px solid #d9dce3;background:#fff;box-shadow:0 24px 40px -22px rgba(14,20,33,.4)}
+.collage .r img{width:100%;display:block}
+.collage .r1{left:-4%;top:34%;transform:rotate(-2deg)}
+.collage .r2{left:46%;top:74%;transform:rotate(2deg)}
+.poprail{gap:28px;align-items:stretch}
+.popup-shot{flex:0 0 auto;height:260px;border-radius:14px;overflow:hidden;border:1.5px solid rgba(14,20,33,.55);background:#fff;transition:transform .3s ease}
+.popup-shot:hover{transform:translateY(-10px)}
+.popup-shot img{display:block;height:100%;width:auto;pointer-events:none;-webkit-user-drag:none;user-select:none}
+.resgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1080px;margin:0 auto}
+.res{margin:0;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:10px;box-shadow:0 20px 40px -30px rgba(14,20,33,.35)}
+.res img{width:100%;display:block;border-radius:8px}
+.resnote{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
+@media(max-width:760px){.resgrid{grid-template-columns:1fr}.popup-shot{height:200px}}
+@media(max-width:980px){.collage .r{width:210px}}
 /* metrics strip */
 .metrics{padding:0 0 64px}
 .metrics .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;background:#f1f2f4;border:1px solid #dcdfe5;border-radius:18px;padding:30px 24px;text-align:center}
@@ -173,7 +187,7 @@ footer a{text-decoration:none}
 
 <nav class="top" id="nav"><div class="wrap">
   <a class="logo" href="#top">Guido <span>Rook</span></a>
-  <div class="links"><a href="#work">Designs</a><a href="#process">Why me</a><a href="#get">What you get</a><a href="#faq">FAQ</a></div>
+  <div class="links"><a href="#work">Designs</a><a href="#results">Results</a><a href="#process">Why me</a><a href="#get">What you get</a><a href="#faq">FAQ</a></div>
   <a class="btn" href="#book">Book a call <span aria-hidden="true">&rarr;</span></a>
 </div></nav>
 
@@ -189,12 +203,14 @@ footer a{text-decoration:none}
     <a class="btn" href="#book">Fix my other emails <span aria-hidden="true">&rarr;</span></a>
   </div>
   <div class="collage" aria-hidden="true">
-    <div class="c c1"><img src="work/odyssey-2026-10-30-flow-ns4.jpg" alt="" loading="eager" decoding="async"></div>
-    <div class="c c2"><img src="work/deko-cocktails-2026-11-27-bf-launch.jpg" alt="" loading="eager" decoding="async"></div>
-    <div class="c c3"><img src="work/odyssey-2026-10-30-flow-q5.jpg" alt="" loading="eager" decoding="async"></div>
-    <div class="c c4"><img src="work/factory-direct-supply-2026-11-06-diablo-blade-check.jpg" alt="" loading="eager" decoding="async"></div>
-    <div class="c c5"><img src="work/p8.jpg" alt="" loading="eager" decoding="async"></div>
-    <span class="tag">all real, all mine</span>
+    <div class="c c1"><img src="work/fg-gato-3pm-fix.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c2"><img src="work/fg-eatwell-yes-you-read.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c3"><img src="work/odyssey-2026-10-30-flow-ns4.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c4"><img src="work/fg-endless-proof.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c5"><img src="work/fg-sbg-diet-coke-club.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="r r1"><img src="work/res-533k.png" alt="" loading="eager" decoding="async"></div>
+    <div class="r r2"><img src="work/res-143k.png" alt="" loading="eager" decoding="async"></div>
+    <span class="tag">real dashboards, real emails</span>
   </div>
 </div></header>
 
@@ -206,24 +222,24 @@ footer a{text-decoration:none}
 
 <section class="block bg-emails" id="work">
   <div class="bg-tiles" aria-hidden="true">
-    <div class="bg-tile" style="top:1%;left:1%;transform:rotate(-10deg);background-image:url(work/odyssey-2026-10-30-flow-ns4.jpg)"></div>
-    <div class="bg-tile" style="top:3%;left:20%;transform:rotate(8deg);background-image:url(work/lambwolf-2026-11-21-holiday-edition.jpg)"></div>
-    <div class="bg-tile" style="top:1%;left:40%;transform:rotate(-4deg);background-image:url(work/factory-direct-supply-2026-11-26-bfcm-launch.jpg)"></div>
-    <div class="bg-tile" style="top:3%;left:60%;transform:rotate(11deg);background-image:url(work/factory-direct-supply-2026-11-02-year-end-punch-list.jpg)"></div>
-    <div class="bg-tile" style="top:1%;right:1%;transform:rotate(-7deg);background-image:url(work/p5.jpg)"></div>
-    <div class="bg-tile" style="top:28%;left:-3%;transform:rotate(6deg);background-image:url(work/p8.jpg)"></div>
-    <div class="bg-tile" style="top:30%;left:18%;transform:rotate(-13deg);background-image:url(work/knenest-2026-11-03-airnest-travel-launch.jpg)"></div>
-    <div class="bg-tile" style="top:28%;left:38%;transform:rotate(10deg);background-image:url(work/lambwolf-2026-11-25-bestsellers-going-fast.jpg)"></div>
-    <div class="bg-tile" style="top:30%;left:58%;transform:rotate(-5deg);background-image:url(work/odyssey-2026-10-30-flow-ns2.jpg)"></div>
+    <div class="bg-tile" style="top:1%;left:1%;transform:rotate(-10deg);background-image:url(work/fg-gato-3pm-fix.jpg)"></div>
+    <div class="bg-tile" style="top:3%;left:20%;transform:rotate(8deg);background-image:url(work/fg-griptec-christmas.jpg)"></div>
+    <div class="bg-tile" style="top:1%;left:40%;transform:rotate(-4deg);background-image:url(work/p8.jpg)"></div>
+    <div class="bg-tile" style="top:3%;left:60%;transform:rotate(11deg);background-image:url(work/fg-endless-shipping.jpg)"></div>
+    <div class="bg-tile" style="top:1%;right:1%;transform:rotate(-7deg);background-image:url(work/fg-sbg-spooky.jpg)"></div>
+    <div class="bg-tile" style="top:28%;left:-3%;transform:rotate(6deg);background-image:url(work/odyssey-2026-10-30-flow-ns1.jpg)"></div>
+    <div class="bg-tile" style="top:30%;left:18%;transform:rotate(-13deg);background-image:url(work/deko-cocktails-2026-11-14-bf-education-4.jpg)"></div>
+    <div class="bg-tile" style="top:28%;left:38%;transform:rotate(10deg);background-image:url(work/knenest-2026-11-03-airnest-travel-launch.jpg)"></div>
+    <div class="bg-tile" style="top:30%;left:58%;transform:rotate(-5deg);background-image:url(work/fg-endless-proof.jpg)"></div>
     <div class="bg-tile" style="top:28%;right:-3%;transform:rotate(12deg);background-image:url(work/deko-cocktails-2026-11-27-bf-launch.jpg)"></div>
-    <div class="bg-tile" style="top:56%;left:1%;transform:rotate(-8deg);background-image:url(work/deko-cocktails-2026-12-03-countdown.jpg)"></div>
-    <div class="bg-tile" style="top:58%;left:21%;transform:rotate(13deg);background-image:url(work/deko-cocktails-2026-11-14-bf-education-4.jpg)"></div>
-    <div class="bg-tile" style="top:56%;left:41%;transform:rotate(-3deg);background-image:url(work/p9.jpg)"></div>
-    <div class="bg-tile" style="top:58%;left:61%;transform:rotate(7deg);background-image:url(work/starlette-2026-11-19-dream-launch.jpg)"></div>
-    <div class="bg-tile" style="top:56%;right:1%;transform:rotate(-12deg);background-image:url(work/odyssey-2026-10-30-flow-q5.jpg)"></div>
-    <div class="bg-tile" style="bottom:1%;left:8%;transform:rotate(8deg);background-image:url(work/odyssey-2026-10-30-lib-t03.jpg)"></div>
-    <div class="bg-tile" style="bottom:3%;left:38%;transform:rotate(-11deg);background-image:url(work/odyssey-2026-10-30-flow-ns1.jpg)"></div>
-    <div class="bg-tile" style="bottom:1%;right:8%;transform:rotate(4deg);background-image:url(work/deko-cocktails-2026-11-08-gift-box-hero.jpg)"></div>
+    <div class="bg-tile" style="top:56%;left:1%;transform:rotate(-8deg);background-image:url(work/odyssey-2026-10-30-flow-q5.jpg)"></div>
+    <div class="bg-tile" style="top:58%;left:21%;transform:rotate(13deg);background-image:url(work/fg-pe-planet-euphoria.jpg)"></div>
+    <div class="bg-tile" style="top:56%;left:41%;transform:rotate(-3deg);background-image:url(work/fg-pe-group-chat.jpg)"></div>
+    <div class="bg-tile" style="top:58%;left:61%;transform:rotate(7deg);background-image:url(work/fg-maternal-welcome.jpg)"></div>
+    <div class="bg-tile" style="top:56%;right:1%;transform:rotate(-12deg);background-image:url(work/odyssey-2026-10-30-flow-ns2.jpg)"></div>
+    <div class="bg-tile" style="bottom:1%;left:8%;transform:rotate(8deg);background-image:url(work/p5.jpg)"></div>
+    <div class="bg-tile" style="bottom:3%;left:38%;transform:rotate(-11deg);background-image:url(work/fg-sbg-diet-coke-club.jpg)"></div>
+    <div class="bg-tile" style="bottom:1%;right:8%;transform:rotate(4deg);background-image:url(work/fg-doze-wind-down.jpg)"></div>
   </div>
   <div class="wrap block-head">
     <h2 class="work-headline">Want to see the whole email? Go on, scroll all of it</h2>
@@ -231,38 +247,69 @@ footer a{text-decoration:none}
   </div>
   <div class="rail-wrap">
     <div class="rail" id="rail1" tabindex="0" aria-label="Client emails, row one. Drag sideways, scroll inside each">
-      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns4.jpg" alt="Odyssey: you're already paying, the old way receipt (email design)" loading="eager" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-27-bf-launch.jpg" alt="Deko Cocktails: Black Friday offer is live (email design)" loading="eager" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-06-diablo-blade-check.jpg" alt="Factory Direct Supply: a dull blade costs you more (email design)" loading="eager" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/p8.jpg" alt="Mis' Rubin's Seasonings: White Magic as a cinema marquee (email design)" loading="eager" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-q5.jpg" alt="Odyssey: 73% willpower was never the tool (email design)" loading="eager" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-21-holiday-edition.jpg" alt="Lambwolf: the holiday edition (email design)" loading="eager" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-12-03-countdown.jpg" alt="Deko Cocktails: one week left countdown (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-gato-3pm-fix.jpg" alt="Gato: the 3PM fix (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-eatwell-yes-you-read.jpg" alt="Mr Eatwell: yes, you read that right (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-endless-proof.jpg" alt="Endless: the proof is in the styling (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns4.jpg" alt="Odyssey: you're already paying (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-sbg-diet-coke-club.jpg" alt="SBG: the diet coke club (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-griptec-christmas.jpg" alt="GripTec: athlete of the week, Christmas cut off (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-pe-own-your-routine.jpg" alt="Own your routine (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-27-bf-launch.jpg" alt="Deko Cocktails: Black Friday offer is live (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-livelong-proudly.jpg" alt="Live Long Long: proudly Singaporean (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-doze-wind-down.jpg" alt="Doze: a wind-down that works (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p8.jpg" alt="Mis' Rubin's Seasonings: White Magic as a cinema marquee (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-eatwell-catch-your-eye.jpg" alt="Mr Eatwell: something catch your eye? (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-q5.jpg" alt="Odyssey: willpower was never the tool (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-maternal-google-search.jpg" alt="What every athlete is searching for (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-06-diablo-blade-check.jpg" alt="Factory Direct Supply: a dull blade costs you more (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-endless-shipping.jpg" alt="Endless: shipping, returns and everything in between (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-25-bestsellers-going-fast.jpg" alt="Lambwolf: bestsellers are going fast (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-pe-planet-euphoria.jpg" alt="The story behind Planet Euphoria (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/p1.jpg" alt="Welcome discount with tea pouring down the page (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/knenest-2026-11-03-airnest-travel-launch.jpg" alt="Knenest: meet Airnest (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-lib-t03.jpg" alt="Odyssey email (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-26-bfcm-launch.jpg" alt="Factory Direct Supply: free Visa gift cards (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
     </div>
     <div class="rail" id="rail2" tabindex="0" aria-label="Client emails, row two. Drag sideways, scroll inside each">
-      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-14-bf-education-4.jpg" alt="Deko Cocktails: this is what we make things for (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/p2.jpg" alt="Pretty Tasty: welcome to the team (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-25-bestsellers-going-fast.jpg" alt="Lambwolf: bestsellers are going fast (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-gato-youre-in.jpg" alt="Gato: you're in the club (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-sbg-spooky.jpg" alt="SBG: spooky season is here (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-eatwell-price.jpg" alt="Mr Eatwell: price vs quality (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-pe-group-chat.jpg" alt="You saw the group chat (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-12-03-countdown.jpg" alt="Deko Cocktails: one week left (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-endless-changed.jpg" alt="Endless: a lot has changed (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns1.jpg" alt="Odyssey: your free trial is waiting (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-02-year-end-punch-list.jpg" alt="Factory Direct Supply: finish the year without a supply run (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/p9.jpg" alt="A quiz flowchart to pick the right pack (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-livelong-work-harder.jpg" alt="Live Long Long: the best don't just work harder (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-maternal-welcome.jpg" alt="Maternal: welcome to the family (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p2.jpg" alt="Pretty Tasty: welcome to the team (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-pe-new-year.jpg" alt="New year, new focus (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-14-bf-education-4.jpg" alt="Deko Cocktails: this is what we make things for (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-26-thankful-for-the-pack.jpg" alt="Lambwolf: thank you for being part of the pack (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns2.jpg" alt="Odyssey: the real reason you keep going back (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-08-gift-box-hero.jpg" alt="Deko Cocktails: the gift box is here (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/fg-maternal-family.jpg" alt="Maternal: we built this for our family (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-26-bfcm-launch.jpg" alt="Factory Direct Supply: free Visa gift cards (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/knenest-2026-11-03-airnest-travel-launch.jpg" alt="Knenest: meet Airnest (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p9.jpg" alt="A quiz flowchart to pick the right pack (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
       <article class="email-card"><div class="email-scroll"><img src="work/p5.jpg" alt="Coffee welcome with a mystery code (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
-      <article class="email-card"><div class="email-scroll"><img src="work/starlette-2026-11-19-dream-launch.jpg" alt="Starlette: dream launch (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+    </div>
+    <div class="rail poprail" id="rail3" tabindex="0" aria-label="Pop-ups I built">
+      <div class="popup-shot"><img src="work/popup-mystery-quiz.jpg" alt="Pop-up: mystery discount picked by goal" loading="lazy" decoding="async" draggable="false"></div>
+      <div class="popup-shot"><img src="work/popup-watch.jpg" alt="Pop-up: mystery discount for watch collectors" loading="lazy" decoding="async" draggable="false"></div>
+      <div class="popup-shot"><img src="work/popup-raw-dog.jpg" alt="Pop-up: welcome offer for raw dog food" loading="lazy" decoding="async" draggable="false"></div>
     </div>
   </div>
   <div class="section-cta"><a class="btn" href="#book">Get emails like these <span aria-hidden="true">&rarr;</span></a></div>
 </section>
 
-<!-- RESULTS: kept hidden until Guido adds real numbers he can stand behind (copyunify has case studies here) -->
-<section class="block" id="results" hidden>
-  <div class="wrap block-head"><h2>What happened at a few brands</h2></div>
+<section class="block" id="results">
+  <div class="wrap">
+    <div class="block-head reveal"><h2>The numbers, straight out of Klaviyo</h2><p>Screenshots from brands I've run email for. Same dashboards you'd see in your own account, nothing redrawn.</p></div>
+    <div class="resgrid">
+      <figure class="res reveal"><img src="work/res-533k.png" alt="Klaviyo summary: $533,075 total revenue, $244,515 from email and SMS, 45.87% of total, up 45%" loading="lazy" decoding="async"></figure>
+      <figure class="res reveal"><img src="work/res-184k.png" alt="Klaviyo summary: $184,099 total revenue, up 1533% on last year, $55,559 from email" loading="lazy" decoding="async"></figure>
+      <figure class="res reveal"><img src="work/res-143k.png" alt="Klaviyo summary: $143,173 total revenue, up 390% on last year, $61,665 from email, up 7591%" loading="lazy" decoding="async"></figure>
+      <figure class="res reveal"><img src="work/res-115k.png" alt="Klaviyo summary: 115,790 pounds total revenue, 37,525 pounds from email" loading="lazy" decoding="async"></figure>
+      <figure class="res reveal"><img src="work/res-102k.png" alt="Klaviyo summary: $102,302 total revenue, $14,921 from email" loading="lazy" decoding="async"></figure>
+      <figure class="res reveal"><img src="work/res-popup-15pct.png" alt="Klaviyo pop-up: 15.03% submit rate, 13K sign-ups, 32K pounds revenue" loading="lazy" decoding="async"></figure>
+    </div>
+    <p class="resnote">Brand names left out on purpose. Ask me on the call and I'll walk you through any of them.</p>
+  </div>
 </section>
 
 <section class="block" id="process">
