@@ -1,155 +1,315 @@
-<title>Guido Rook</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Guido Rook runs email for Shopify brands. Real client emails, month to month.">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guido Rook. Email for Shopify brands</title>
+<meta name="description" content="Guido Rook runs email for Shopify brands: flows, weekly sends, the list and the inbox. Month to month, no contract.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=Geist+Mono:wght@400;600&family=Caveat:wght@600;700&display=swap">
 <style>
 :root{
-  --page:#fafafc; --ink:#0e1421; --muted:#5a6475; --rule:#e7e8ee; --card:#ffffff;
-  --green:#1dbf73; --onGreen:#06281a; --blue:#1b8bff; --coral:#ff7b5c; --note:#1b8bff; --well:#f1f2f6;
+  --ink:#0e1421; --ink2:#3b4354; --muted:#6b7385; --rule:#e6e8ee; --page:#ffffff; --soft:#f5f6f8;
+  --blue:#1b8bff; --blueDark:#0f6fd6; --green:#25d689; --grad:linear-gradient(90deg,#25d689 0%,#1b8bff 100%);
   --paper:#fffdf6; --paperInk:#23201a; --paperRule:#d9d3c3;
-  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"Geist","Manrope",-apple-system,system-ui,"Segoe UI",sans-serif;
   --mono:"Geist Mono",ui-monospace,Menlo,monospace;
   --hand:"Caveat","Brush Script MT",cursive;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --page:#0d111b; --ink:#eef1f6; --muted:#a3acbd; --rule:#232a39; --card:#151b28;
-  --green:#34d68a; --onGreen:#04180f; --blue:#62a8ff; --coral:#ff9a80; --note:#7db6ff; --well:#141a26;
-  --paper:#f3efe3; --paperInk:#23201a; --paperRule:#cfc8b6; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --page:#0d111b; --ink:#eef1f6; --muted:#a3acbd; --rule:#232a39; --card:#151b28;
-  --green:#34d68a; --onGreen:#04180f; --blue:#62a8ff; --coral:#ff9a80; --note:#7db6ff; --well:#141a26;
-  --paper:#f3efe3; --paperInk:#23201a; --paperRule:#cfc8b6; color-scheme:dark}
 *{box-sizing:border-box}
-html{overflow-x:clip}
-body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;overflow-x:clip}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-@media (min-width:700px){.wrap{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;letter-spacing:-.005em;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
 a{color:inherit}
-.top{display:flex;justify-content:space-between;align-items:center;padding-block:24px}
-.name{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none}
-.top .call{font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);border-radius:999px;padding:9px 16px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.wrap{padding-left:32px;padding-right:32px}}
+.hand{font-family:var(--hand);font-weight:700;color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 34px;border-radius:10px;background:var(--blue);color:#fff;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid rgba(14,20,33,.55);transition:transform .2s ease,background .2s ease}
+.btn:hover{background:var(--blueDark);transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,.rail:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:#eef5ff;border:1px solid #d6e7ff;border-radius:999px;padding:8px 16px}
+section.block{padding:120px 0}
+.block-head{text-align:center;max-width:820px;margin:0 auto 56px}
+.block-head h2{font-weight:700;font-size:clamp(32px,4.4vw,54px);line-height:1.05;letter-spacing:-.035em;margin:0}
+.block-head p{margin:18px auto 0;color:var(--ink2);font-size:19px;max-width:56ch}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
 
-.hero{padding-block:56px 24px;display:grid;gap:26px;justify-items:start}
-h1{font-weight:800;font-size:clamp(42px,7.4vw,96px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:12em}
-h1 .line2{position:relative;display:inline-block}
-h1 svg{position:absolute;left:0;right:0;bottom:-.14em;width:100%;height:.32em;overflow:visible}
-h1 path{fill:none;stroke:var(--green);stroke-width:7;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.1s .5s ease-out forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.sub{font-size:22px;color:var(--muted);margin:6px 0 0}
-.btn{display:inline-flex;align-items:center;padding:18px 30px;border-radius:14px;background:var(--green);color:var(--onGreen);font-weight:700;font-size:18px;text-decoration:none;transition:transform .2s ease}
-.btn:hover{transform:translateY(-2px)}
-.btn:focus-visible,.top a:focus-visible,.rail:focus-visible,.arrow:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-.fine{font-size:14px;color:var(--muted)}
-.note{font-family:var(--hand);font-weight:700;color:var(--note);font-size:26px;line-height:1;transform:rotate(-4deg);display:inline-flex;align-items:center;gap:8px}
-.note svg{width:46px;height:30px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;flex:none}
+/* nav */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+nav.top.scrolled{border-bottom-color:var(--rule)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.03em;text-decoration:none}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:30px;font-size:15px;font-weight:500}
+.links a{text-decoration:none;color:var(--ink2)}
+.links a:hover{color:var(--ink)}
+nav .btn{padding:11px 20px;font-size:15px}
+@media(max-width:900px){.links{display:none}}
 
-/* the bill */
-.bill{padding-block:48px 40px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
-.bill .say{grid-column:1 / span 5;display:grid;gap:14px;align-content:start}
-.bill h2{font-weight:800;font-size:clamp(32px,4.2vw,54px);line-height:1.02;letter-spacing:-.04em;margin:0}
-.bill .say p{margin:0;color:var(--muted);font-size:20px;max-width:24em}
-.bill .say .note{margin-top:8px;color:var(--coral);transform:rotate(-3deg)}
-.till{grid-column:7 / span 6;position:relative;justify-self:center;width:min(100%,440px)}
-.slot{height:14px;border-radius:999px;background:var(--ink);opacity:.9;margin:0 -14px;position:relative;z-index:2;box-shadow:0 6px 14px -6px rgba(0,0,0,.5)}
+/* hero */
+.hero{padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-weight:800;font-size:clamp(40px,5.6vw,74px);line-height:1.02;letter-spacing:-.045em;margin:22px 0 26px}
+.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .copy p{margin:0 0 14px;color:var(--ink2);font-size:18px;max-width:34em}
+.hero .copy p.strong{color:var(--ink);font-weight:600;margin-top:22px}
+.hero .hand{font-size:27px;display:inline-block;transform:rotate(-2deg);margin:2px 0 26px;border-bottom:2px solid var(--ink2);padding-bottom:0;line-height:1}
+.collage{position:relative;height:620px}
+.collage .c{position:absolute;width:210px;height:300px;border-radius:14px;overflow:hidden;border:1.5px solid rgba(14,20,33,.55);background:#fff;box-shadow:0 30px 50px -30px rgba(14,20,33,.45);transition:transform .4s ease}
+.collage .c img{width:100%;display:block}
+.collage .c:hover{z-index:9}
+.collage .c1{left:2%;top:4%;transform:rotate(-7deg)}
+.collage .c2{left:38%;top:0;transform:rotate(4deg);z-index:2}
+.collage .c3{left:70%;top:8%;transform:rotate(-3deg)}
+.collage .c4{left:12%;top:50%;transform:rotate(5deg);z-index:3}
+.collage .c5{left:50%;top:46%;transform:rotate(-5deg);z-index:4}
+.collage .c1:hover{transform:rotate(-7deg) translateY(-10px)}.collage .c2:hover{transform:rotate(4deg) translateY(-10px)}.collage .c3:hover{transform:rotate(-3deg) translateY(-10px)}.collage .c4:hover{transform:rotate(5deg) translateY(-10px)}.collage .c5:hover{transform:rotate(-5deg) translateY(-10px)}
+.collage .tag{position:absolute;left:58%;top:88%;z-index:6;font-family:var(--hand);font-size:26px;font-weight:700;color:var(--ink2);transform:rotate(-4deg);white-space:nowrap}
+@media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr}
+  .collage{height:420px;max-width:560px;width:100%;justify-self:center}
+  .collage .c{width:150px;height:220px}
+}
+
+/* metrics strip */
+.metrics{padding:0 0 64px}
+.metrics .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;background:#f1f2f4;border:1px solid #dcdfe5;border-radius:18px;padding:30px 24px;text-align:center}
+.metrics b{display:block;font-size:clamp(24px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.metrics b.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metrics span{font-size:13.5px;color:var(--muted)}
+@media(max-width:700px){.metrics .strip{grid-template-columns:1fr;gap:22px}}
+
+/* designs */
+section.bg-emails{position:relative;overflow:hidden;padding:64px 0 56px;background:radial-gradient(circle at 12% 22%,rgba(42,64,153,.05) 0%,transparent 50%),radial-gradient(circle at 88% 78%,rgba(37,214,137,.04) 0%,transparent 50%),#d8dbe2}
+.bg-tiles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg-tile{position:absolute;width:240px;height:440px;background-size:cover;background-position:top center;border-radius:14px;filter:blur(20px) saturate(1.1);opacity:.34}
+.bg-emails .block-head{position:relative;z-index:2;margin-bottom:0}
+.work-headline{font-style:italic;font-weight:800 !important;letter-spacing:-.03em}
+.hint{display:inline-flex;align-items:center;gap:14px;color:#2c3340;font-weight:500;font-size:16px;margin-top:16px}
+.arrows-inline{font-weight:700;letter-spacing:-2px;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.hint .m{display:none}
+@media(hover:none){.hint .d{display:none}.hint .m{display:inline}}
+.rail-wrap{position:relative;z-index:2;margin-top:48px}
+.rail{display:flex;gap:24px;padding:12px 28px 28px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;cursor:grab;user-select:none;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail.dragging{cursor:grabbing}
+.rail.dragging *{pointer-events:none}
+.rail + .rail{margin-top:6px}
+.email-card{flex:0 0 290px;height:540px;background:#fff;border-radius:14px;overflow:hidden;border:1.5px solid rgba(14,20,33,.55);transition:transform .3s ease;position:relative}
+.email-card:hover{transform:translateY(-10px)}
+.email-scroll{height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;overscroll-behavior-y:contain;background:#ecedea}
+.email-scroll::-webkit-scrollbar{display:none}
+.email-scroll img{width:100%;display:block;-webkit-user-drag:none;user-select:none}
+.section-cta{text-align:center;margin-top:36px;position:relative;z-index:2}
+.section-cta .btn{min-width:min(100%,420px)}
+@media(max-width:700px){.email-card{flex-basis:250px;height:470px}.rail{gap:16px;padding:10px 16px 22px}}
+
+/* process */
+.steps{display:grid;gap:18px;max-width:980px;margin:0 auto}
+.step{display:grid;grid-template-columns:180px 1fr;gap:28px;align-items:start;background:#fafafa;border:1px solid var(--rule);border-radius:20px;padding:34px 36px}
+.step .when{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.step .when b{display:block;font-size:44px;line-height:1;letter-spacing:-.04em;color:var(--ink);text-transform:none;margin-top:6px}
+.step h3{margin:0 0 10px;font-size:24px;letter-spacing:-.025em;line-height:1.15}
+.step p{margin:0 0 8px;color:var(--ink2)}
+.step ul{margin:10px 0 0;padding-left:20px;color:var(--ink2)}
+.step li{margin:4px 0}
+@media(max-width:700px){.step{grid-template-columns:1fr;gap:12px;padding:26px 22px}}
+
+/* what you get: the receipt */
+.getgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1040px;margin:0 auto}
+.getgrid .say h2{text-align:left;font-weight:700;font-size:clamp(32px,4.2vw,52px);line-height:1.05;letter-spacing:-.035em;margin:0 0 18px}
+.getgrid .say p{margin:0 0 14px;color:var(--ink2);font-size:18px}
+.getgrid .say .hand{font-size:27px;display:inline-block;transform:rotate(-3deg);color:#e0603f;margin-top:8px}
+.till{position:relative;justify-self:center;width:min(100%,430px)}
+.slot{height:14px;border-radius:999px;background:var(--ink);margin:0 -14px;position:relative;z-index:2;box-shadow:0 6px 14px -6px rgba(0,0,0,.5)}
 .paperbox{overflow:hidden;margin-top:-7px;padding:0 6px 30px}
-.receipt{background:var(--paper);color:var(--paperInk);font-family:var(--mono);font-size:14px;line-height:1.5;padding:30px 24px 26px;
-  transform-origin:top center;transform:translateY(-102%) rotate(0deg);transition:transform 2.6s cubic-bezier(.3,.7,.2,1);
-  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 100%;
-          mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 100%;
-  filter:drop-shadow(0 18px 22px rgba(14,20,33,.18))}
-.till.printed .receipt{transform:translateY(0) rotate(-1.6deg)}
-.till:hover .receipt{transform:translateY(0) rotate(0deg)}
+.receipt{background:var(--paper);color:var(--paperInk);font-family:var(--mono);font-size:14px;line-height:1.5;padding:30px 24px 26px;transform:translateY(-102%);transition:transform 2.6s cubic-bezier(.3,.7,.2,1);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 100%;filter:drop-shadow(0 18px 22px rgba(14,20,33,.18))}
+.till.printed .receipt{transform:translateY(0) rotate(-1.4deg)}
+.till:hover .receipt{transform:translateY(0)}
 .receipt .head{text-align:center;display:grid;gap:2px;margin-bottom:14px}
 .receipt .head b{font-size:18px;letter-spacing:.12em}
 .receipt .meta{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
 .receipt hr{border:0;border-top:1.5px dashed var(--paperRule);margin:12px 0}
-.line{display:flex;align-items:baseline;gap:8px;position:relative}
+.line{display:flex;align-items:baseline;gap:8px}
 .line .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.line .dots{flex:1;border-bottom:1.5px dotted var(--paperRule);transform:translateY(-4px);min-width:16px}
-.line .r{white-space:nowrap;font-weight:600}
+.line .dots{flex:1;border-bottom:1.5px dotted var(--paperRule);transform:translateY(-4px);min-width:14px}
+.line .r{white-space:nowrap;font-weight:600;position:relative}
 .line.total{font-size:17px;font-weight:600;margin-top:4px}
-.line.total .r{font-size:19px}
 .receipt small{display:block;font-size:12px;text-align:center;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
 .bar{height:46px;margin:18px auto 6px;width:78%;background:repeating-linear-gradient(90deg,var(--paperInk) 0 2px,transparent 2px 4px,var(--paperInk) 4px 7px,transparent 7px 9px,var(--paperInk) 9px 10px,transparent 10px 14px,var(--paperInk) 14px 17px,transparent 17px 19px)}
 .receipt .bye{text-align:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-.receipt .scrawl{position:absolute;font-family:var(--hand);font-size:24px;font-weight:700;color:var(--blue);white-space:nowrap;line-height:1;pointer-events:none}
-.receipt .circle{position:absolute;inset:-6px -10px -6px auto;width:62px;border:2.5px solid var(--blue);border-radius:50%;transform:rotate(-6deg);opacity:0;transition:opacity .4s 2.4s}
+.circle{position:absolute;inset:-6px -10px -6px -10px;border:2.5px solid var(--blue);border-radius:50%;transform:rotate(-6deg);opacity:0;transition:opacity .4s 2.4s}
 .till.printed .circle{opacity:.9}
-.side{position:absolute;white-space:nowrap;font-family:var(--hand);font-weight:700;font-size:25px;line-height:1.05;color:var(--note);opacity:0;transition:opacity .5s;display:flex;align-items:center;gap:6px}
-.till.printed .side{opacity:1}
-.side.s1{left:calc(100% + 8px);top:150px;transition-delay:2.5s;transform:rotate(-5deg)}
-.side.s2{right:calc(100% + 8px);top:262px;transition-delay:2.8s;transform:rotate(4deg);color:var(--coral);text-align:right}
-.side svg{width:34px;height:24px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round}
+@media(max-width:860px){.getgrid{grid-template-columns:1fr;gap:36px}.receipt{font-size:13px;padding:26px 18px 24px}}
 
-/* gallery, copyunify style: a rail you drag sideways, each email scrolls on its own */
-.gallery{padding-block:56px 16px}
-.ghead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:22px}
-.ghead p{margin:0;font-size:17px;max-width:40em}
-.rail{display:flex;gap:24px;overflow-x:auto;overflow-y:hidden;padding:8px max(16px,calc((100vw - 1120px) / 2 + 24px)) 26px;cursor:grab;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
-.rail.dragging{cursor:grabbing;user-select:none}
-.rail.dragging .card{pointer-events:none}
-.card{flex:0 0 290px;height:540px;border-radius:16px;background:var(--card);border:1px solid var(--rule);box-shadow:0 22px 44px -26px rgba(14,20,33,.45);overflow:hidden;display:block}
-.card .scroll{height:100%;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;background:var(--well);scrollbar-width:thin}
-.card img{width:100%;display:block;-webkit-user-drag:none;user-select:none}
-.arrows{display:flex;gap:12px;justify-content:flex-end}
-.arrow{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:transform .15s ease,background .15s ease}
-.arrow:hover{transform:scale(1.06);background:var(--ink);color:var(--page)}
-.arrow svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+/* book */
+#book{background:var(--soft)}
+.calbox{max-width:1000px;margin:0 auto;background:#fff;border:1px solid var(--rule);border-radius:20px;overflow:hidden;min-height:640px}
+.calbox iframe{display:block;width:100%;height:720px;border:0}
+.calnote{text-align:center;margin-top:18px;color:var(--muted);font-size:15px}
 
-/* why me */
-.why{padding-block:40px 24px}
-.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-block:52px;align-items:center}
-.row .txt{grid-column:1 / span 7;display:grid;gap:12px}
-.row .note{grid-column:9 / span 4;justify-self:start;font-size:30px}
-.row.flip .txt{grid-column:6 / span 7;grid-row:1}
-.row.flip .note{grid-column:1 / span 4;grid-row:1;justify-self:end;transform:rotate(4deg);color:var(--coral)}
-.row h2{font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.02;letter-spacing:-.04em;margin:0}
-.row p{margin:0;color:var(--muted);font-size:20px;max-width:32em}
-.row.big h2{font-size:clamp(34px,5vw,64px)}
-.row.big h2 span{color:var(--green)}
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--rule);padding:22px 0}
+.faq summary{list-style:none;cursor:pointer;font-weight:600;font-size:19px;letter-spacing:-.015em;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:26px;line-height:1;color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:12px 0 0;color:var(--ink2);max-width:62ch}
 
-.close{padding-block:96px 104px;display:grid;gap:24px;justify-items:start}
-.close h2{font-weight:800;font-size:clamp(36px,5.6vw,72px);line-height:1;letter-spacing:-.045em;margin:0;max-width:13em}
-.close h2 span{color:var(--green)}
-.close p{margin:0;font-size:20px;color:var(--muted);max-width:32em}
-.close .ctaline{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
-footer{border-top:1px solid var(--rule)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:24px;font-size:15px;color:var(--muted)}
+footer{border-top:1px solid var(--rule);padding:30px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:14.5px;color:var(--muted)}
 footer nav{display:flex;gap:20px}
 footer a{text-decoration:none}
-@media (max-width:1180px){.side{display:none}}
-@media (max-width:860px){
-  .bill{grid-template-columns:1fr;gap:28px}
-  .bill .say,.till{grid-column:1}
-  .row,.row.flip{grid-template-columns:1fr;gap:10px;padding-block:32px}
-  .row .txt,.row.flip .txt,.row .note,.row.flip .note{grid-column:1;grid-row:auto;justify-self:start}
-  .card{flex-basis:260px;height:500px}
-  .receipt{font-size:13px;padding:26px 18px 24px}
-}
-@media (prefers-reduced-motion:reduce){
-  h1 path{animation:none;stroke-dashoffset:0}.btn{transition:none}
-  .receipt{transition:none}.circle,.side{transition:none}
-}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.receipt{transition:none}.arrows-inline{animation:none}.circle{transition:none}html{scroll-behavior:auto}}
 </style>
+</head>
+<body>
 
-<header class="wrap top">
-  <a class="name" href="#">Guido Rook</a>
-  <a class="call" href="https://cal.com/guidorook/30min" target="_blank" rel="noopener">Book a call</a>
-</header>
+<nav class="top" id="nav"><div class="wrap">
+  <a class="logo" href="#top">Guido <span>Rook</span></a>
+  <div class="links"><a href="#work">Designs</a><a href="#process">How it works</a><a href="#get">What you get</a><a href="#faq">FAQ</a></div>
+  <a class="btn" href="#book">Book a call <span aria-hidden="true">&rarr;</span></a>
+</div></nav>
 
-<main>
-  <section class="wrap hero">
-    <h1>Yes, I'm the guy<br><span class="line2">who rewrote your email.<svg viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 28 C 120 8, 240 36, 360 18 S 540 10, 596 22"/></svg></span></h1>
-    <p class="sub">Guido, by the way. That one was on the house.</p>
-    <a class="btn" href="https://cal.com/guidorook/30min" target="_blank" rel="noopener">Fix my other emails</a>
-  </section>
+<header class="hero" id="top"><div class="wrap">
+  <div class="copy">
+    <span class="eyebrow">For Shopify brands</span>
+    <h1>Yes, I'm the guy who rewrote <span class="g">your email.</span></h1>
+    <p>Guido, by the way. That one was on the house.</p>
+    <p>You already paid for your list with ads. Most brands then send it the same three discount codes and wonder why it goes quiet.</p>
+    <p>I look after the whole thing for you. The flows, the weekly sends, the list, and making sure it all lands in the inbox and not in promotions.</p>
+    <p class="strong">One person, every email, month to month. If it stops paying its way, you stop paying me.</p>
+    <span class="hand">yes, I hit send myself</span><br>
+    <a class="btn" href="#book">Fix my other emails <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  <div class="collage" aria-hidden="true">
+    <div class="c c1"><img src="work/cloudline-2026-11-16-the-cotton-problem.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c2"><img src="work/deko-cocktails-2026-11-27-bf-launch.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c3"><img src="work/odyssey-2026-10-30-flow-q5.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c4"><img src="work/lambwolf-2026-11-23-black-friday-week.jpg" alt="" loading="eager" decoding="async"></div>
+    <div class="c c5"><img src="work/p8.jpg" alt="" loading="eager" decoding="async"></div>
+    <span class="tag">all real, all mine</span>
+  </div>
+</div></header>
 
-  <section class="wrap bill" aria-label="What it costs">
-    <div class="say">
-      <h2>I'd rather show you the bill now.</h2>
-      <p>No packages to pick from. You get me, doing all of your emails, every month, for as long as they pay their way.</p>
-      <span class="note"><svg viewBox="0 0 46 30" aria-hidden="true"><path d="M4 10 C 16 28, 30 26, 42 12 M34 10 L42 12 L41 20"/></svg>printed it just for you</span>
+<section class="metrics"><div class="wrap"><div class="strip reveal">
+  <div><b class="g">100+</b><span>DTC brands since 2023</span></div>
+  <div><b>Month to month</b><span>No contract, ever</span></div>
+  <div><b>Just me</b><span>You talk to Guido, not an account manager</span></div>
+</div></div></section>
+
+<section class="block bg-emails" id="work">
+  <div class="bg-tiles" aria-hidden="true">
+    <div class="bg-tile" style="top:1%;left:1%;transform:rotate(-10deg);background-image:url(work/cloudline-2026-11-16-the-cotton-problem.jpg)"></div>
+    <div class="bg-tile" style="top:3%;left:20%;transform:rotate(8deg);background-image:url(work/p8.jpg)"></div>
+    <div class="bg-tile" style="top:1%;left:40%;transform:rotate(-4deg);background-image:url(work/p1.jpg)"></div>
+    <div class="bg-tile" style="top:3%;left:60%;transform:rotate(11deg);background-image:url(work/factory-direct-supply-2026-11-26-bfcm-launch.jpg)"></div>
+    <div class="bg-tile" style="top:1%;right:1%;transform:rotate(-7deg);background-image:url(work/odyssey-2026-10-30-flow-ns1.jpg)"></div>
+    <div class="bg-tile" style="top:28%;left:-3%;transform:rotate(6deg);background-image:url(work/odyssey-2026-10-30-flow-ns2.jpg)"></div>
+    <div class="bg-tile" style="top:30%;left:18%;transform:rotate(-13deg);background-image:url(work/p3.jpg)"></div>
+    <div class="bg-tile" style="top:28%;left:38%;transform:rotate(10deg);background-image:url(work/lambwolf-2026-11-23-black-friday-week.jpg)"></div>
+    <div class="bg-tile" style="top:30%;left:58%;transform:rotate(-5deg);background-image:url(work/lambwolf-2026-11-21-holiday-edition.jpg)"></div>
+    <div class="bg-tile" style="top:28%;right:-3%;transform:rotate(12deg);background-image:url(work/odyssey-2026-10-30-lib-t03.jpg)"></div>
+    <div class="bg-tile" style="top:56%;left:1%;transform:rotate(-8deg);background-image:url(work/p2.jpg)"></div>
+    <div class="bg-tile" style="top:58%;left:21%;transform:rotate(13deg);background-image:url(work/p9.jpg)"></div>
+    <div class="bg-tile" style="top:56%;left:41%;transform:rotate(-3deg);background-image:url(work/cloudline-2026-11-28-bf-forward-this.jpg)"></div>
+    <div class="bg-tile" style="top:58%;left:61%;transform:rotate(7deg);background-image:url(work/odyssey-2026-10-30-flow-ns4.jpg)"></div>
+    <div class="bg-tile" style="top:56%;right:1%;transform:rotate(-12deg);background-image:url(work/cloudline-2026-11-17-find-your-pair.jpg)"></div>
+    <div class="bg-tile" style="bottom:1%;left:8%;transform:rotate(8deg);background-image:url(work/cloudline-2026-11-30-cyber-monday.jpg)"></div>
+    <div class="bg-tile" style="bottom:3%;left:38%;transform:rotate(-11deg);background-image:url(work/cloudline-2026-11-19-mark-these-three-days.jpg)"></div>
+    <div class="bg-tile" style="bottom:1%;right:8%;transform:rotate(4deg);background-image:url(work/factory-direct-supply-2026-11-02-year-end-punch-list.jpg)"></div>
+  </div>
+  <div class="wrap block-head">
+    <h2 class="work-headline">Want to see the whole email? Go on, scroll all of it</h2>
+    <p class="hint"><span class="arrows-inline" aria-hidden="true">&larr;&nbsp;&nbsp;&rarr;</span><span class="d">Drag sideways. Scroll inside each email.</span><span class="m">Swipe sideways. Scroll inside each email.</span></p>
+  </div>
+  <div class="rail-wrap">
+    <div class="rail" id="rail1" tabindex="0" aria-label="Client emails, row one. Drag sideways, scroll inside each">
+      <article class="email-card"><div class="email-scroll"><img src="work/cloudline-2026-11-16-the-cotton-problem.jpg" alt="Cloudline: it's not your feet, it's the cotton (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns4.jpg" alt="Odyssey: you're already paying, the old way receipt (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-27-bf-launch.jpg" alt="Deko Cocktails: Black Friday offer is live (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-23-black-friday-week.jpg" alt="Lambwolf: Black Friday week (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-06-diablo-blade-check.jpg" alt="Factory Direct Supply: a dull blade costs you more (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p8.jpg" alt="Mis' Rubin's Seasonings: White Magic as a cinema marquee (email design)" loading="eager" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/cloudline-2026-11-17-find-your-pair.jpg" alt="Cloudline: find your pair before the cold (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-q5.jpg" alt="Odyssey: 73% willpower was never the tool (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-21-holiday-edition.jpg" alt="Lambwolf: the holiday edition (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-12-03-countdown.jpg" alt="Deko Cocktails: one week left countdown (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p1.jpg" alt="Welcome discount with tea pouring down the page (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/cloudline-2026-11-30-cyber-monday.jpg" alt="Cloudline: closes at 11:59 PM (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/knenest-2026-11-03-airnest-travel-launch.jpg" alt="Knenest: meet Airnest (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-lib-t03.jpg" alt="Odyssey email (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-28-small-business-saturday.jpg" alt="Lambwolf: small business Saturday (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-26-bfcm-launch.jpg" alt="Factory Direct Supply: free Visa gift cards (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+    </div>
+    <div class="rail" id="rail2" tabindex="0" aria-label="Client emails, row two. Drag sideways, scroll inside each">
+      <article class="email-card"><div class="email-scroll"><img src="work/cloudline-2026-11-19-mark-these-three-days.jpg" alt="Cloudline: mark these three days (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-14-bf-education-4.jpg" alt="Deko Cocktails: this is what we make things for (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p2.jpg" alt="Pretty Tasty: welcome to the team (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-25-bestsellers-going-fast.jpg" alt="Lambwolf: bestsellers are going fast (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns1.jpg" alt="Odyssey: your free trial is waiting (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/factory-direct-supply-2026-11-02-year-end-punch-list.jpg" alt="Factory Direct Supply: finish the year without a supply run (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/cloudline-2026-11-27-bf-pack-list.jpg" alt="Cloudline: the pack list (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p9.jpg" alt="A quiz flowchart to pick the right pack (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/lambwolf-2026-11-26-thankful-for-the-pack.jpg" alt="Lambwolf: thank you for being part of the pack (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/odyssey-2026-10-30-flow-ns2.jpg" alt="Odyssey: the real reason you keep going back (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/deko-cocktails-2026-11-08-gift-box-hero.jpg" alt="Deko Cocktails: the gift box is here (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p5.jpg" alt="Coffee welcome with a mystery code (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/cloudline-2026-11-28-bf-forward-this.jpg" alt="Cloudline: forward this to whoever needs it (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/starlette-2026-11-19-dream-launch.jpg" alt="Starlette: dream launch (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/p3.jpg" alt="Lambwolf: Black Friday in bubble letters (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+      <article class="email-card"><div class="email-scroll"><img src="work/azaria-2026-10-30-teddy-charm.jpg" alt="Azaria: meet Teddy (email design)" loading="lazy" decoding="async" draggable="false"></div></article>
+    </div>
+  </div>
+  <div class="section-cta"><a class="btn" href="#book">Get emails like these <span aria-hidden="true">&rarr;</span></a></div>
+</section>
+
+<!-- RESULTS: kept hidden until Guido adds real numbers he can stand behind (copyunify has case studies here) -->
+<section class="block" id="results" hidden>
+  <div class="wrap block-head"><h2>What happened at a few brands</h2></div>
+</section>
+
+<section class="block" id="process">
+  <div class="wrap">
+    <div class="block-head reveal"><h2>Your first 90 days</h2><p>Nothing clever. The boring stuff that makes money gets done first, then we build on it.</p></div>
+    <div class="steps">
+      <div class="step reveal"><div class="when">Month<b>1</b></div><div>
+        <h3>I fix what's leaking.</h3>
+        <p>I go through your account, your pop-up and every flow that's running, and fix the ones losing you sales first.</p>
+        <ul><li>Welcome, abandoned cart, browse and checkout flows rebuilt or written from scratch</li><li>Pop-up that actually gets people on the list</li><li>Sender setup checked so your emails land in the inbox</li></ul>
+      </div></div>
+      <div class="step reveal"><div class="when">Month<b>2</b></div><div>
+        <h3>Weekly sends start.</h3>
+        <p>A calendar built around your launches and the dates that matter to your customers, then emails every week that sound like your brand.</p>
+        <ul><li>Campaign calendar you can see and change</li><li>Copy and design for every send</li><li>Post-purchase and winback flows added</li></ul>
+      </div></div>
+      <div class="step reveal"><div class="when">Month<b>3</b></div><div>
+        <h3>We grow it.</h3>
+        <p>By now there's data to work with, so we test, split the list properly and push what's working harder.</p>
+        <ul><li>Segments by what people buy and how often</li><li>Tests on the things that move revenue, not button colours</li><li>A plain monthly report: what made money, what's next</li></ul>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS: kept hidden until Guido adds real client quotes (copyunify has client letters here) -->
+<section class="block" id="reviews" hidden>
+  <div class="wrap block-head"><h2>What clients say</h2></div>
+</section>
+
+<section class="block" id="get" style="padding-top:40px">
+  <div class="wrap getgrid">
+    <div class="say reveal">
+      <h2>What you get. I'd rather show you the bill.</h2>
+      <p>No packages to pick from. You get me doing all of your emails, every month, for as long as they pay their way.</p>
+      <p>The price depends on what's there already, so we work it out on the call. It's one monthly fee, nothing on top.</p>
+      <span class="hand">printed it just for you</span>
     </div>
     <div class="till" id="till">
       <div class="slot" aria-hidden="true"></div>
@@ -158,10 +318,12 @@ footer a{text-decoration:none}
           <div class="head"><b>GUIDO ROOK</b><span>EMAIL FOR SHOPIFY BRANDS</span><span>FLORENCE, ITALY</span></div>
           <div class="meta"><span>For: <span id="who">your brand</span></span><span id="day"></span></div>
           <hr>
-          <div class="line"><span class="l">Welcome email, rewritten</span><span class="dots"></span><span class="r" style="position:relative">0.00<i class="circle"></i></span></div>
+          <div class="line"><span class="l">Welcome email, rewritten</span><span class="dots"></span><span class="r">0.00<i class="circle"></i></span></div>
           <div class="line"><span class="l">Every other email</span><span class="dots"></span><span class="r">MONTHLY</span></div>
           <div class="line"><span class="l">Flows + weekly sends</span><span class="dots"></span><span class="r">INCL.</span></div>
+          <div class="line"><span class="l">Design for every send</span><span class="dots"></span><span class="r">INCL.</span></div>
           <div class="line"><span class="l">List + landing in the inbox</span><span class="dots"></span><span class="r">INCL.</span></div>
+          <div class="line"><span class="l">Monthly report, in English</span><span class="dots"></span><span class="r">INCL.</span></div>
           <div class="line"><span class="l">Account managers</span><span class="dots"></span><span class="r">0</span></div>
           <div class="line"><span class="l">Contract</span><span class="dots"></span><span class="r">NONE</span></div>
           <hr>
@@ -175,58 +337,31 @@ footer a{text-decoration:none}
           <div class="bye">Keep this for your records. Or don't.</div>
         </div>
       </div>
-      <span class="side s1" aria-hidden="true"><svg viewBox="0 0 34 24"><path d="M32 6 C 22 22, 10 20, 3 10 M3 10 L4 18 M3 10 L11 9"/></svg>the one<br>you read</span>
-      <span class="side s2" aria-hidden="true">leave any<br>month, I mean it<svg viewBox="0 0 34 24"><path d="M2 6 C 12 22, 24 20, 31 10 M31 10 L30 18 M31 10 L23 9"/></svg></span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="gallery" aria-label="Six full client emails">
-    <div class="wrap ghead">
-      <p><b>My work.</b> Full emails, top to bottom. Nothing mocked up.</p>
-      <span class="note"><svg viewBox="0 0 46 30" aria-hidden="true"><path d="M4 8 C 16 26, 30 26, 42 14 M34 12 L42 14 L40 22"/></svg>drag sideways, scroll inside each one</span>
-    </div>
-    <div class="rail" id="rail" tabindex="0" aria-label="Email gallery. Drag or use the arrows to move sideways, scroll inside an email to read it">
-      <article class="card"><div class="scroll"><img src="work/p1.jpg" alt="Email design: welcome discount with tea pouring down the page" loading="lazy" draggable="false"></div></article>
-      <article class="card"><div class="scroll"><img src="work/p2.jpg" alt="Email design: welcome to the team for a drinks brand's creators" loading="lazy" draggable="false"></div></article>
-      <article class="card"><div class="scroll"><img src="work/p8.jpg" alt="Email design: a seasoning launch as a vintage cinema marquee" loading="lazy" draggable="false"></div></article>
-      <article class="card"><div class="scroll"><img src="work/p3.jpg" alt="Email design: Black Friday in bubble letters" loading="lazy" draggable="false"></div></article>
-      <article class="card"><div class="scroll"><img src="work/p9.jpg" alt="Email design: a quiz flowchart to pick the right pack" loading="lazy" draggable="false"></div></article>
-      <article class="card"><div class="scroll"><img src="work/p5.jpg" alt="Email design: coffee welcome with a mystery code" loading="lazy" draggable="false"></div></article>
-    </div>
-    <div class="wrap arrows">
-      <button type="button" class="arrow" id="prev" aria-label="Previous email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <button type="button" class="arrow" id="next" aria-label="Next email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-    </div>
-  </section>
+<section class="block" id="book">
+  <div class="wrap">
+    <div class="block-head reveal"><h2>Let's fix the rest of your emails.</h2><p>Thirty minutes, just me. I'll have your store open and I'll show you what I've already written for you.</p></div>
+    <div class="calbox reveal"><iframe src="https://cal.com/guidorook/30min?embed=true&amp;layout=month_view" title="Book a 30 minute call with Guido" loading="lazy"></iframe></div>
+    <p class="calnote">Not loading? <a href="https://cal.com/guidorook/30min" target="_blank" rel="noopener">Book here instead</a>.</p>
+  </div>
+</section>
 
-  <section class="wrap why" aria-label="Why me">
-    <div class="row">
-      <div class="txt"><h2>I've already left something in your cart.</h2>
-      <p>Before I messaged you, I joined your list and left a cart. So I've read exactly what your customers get.</p></div>
-      <span class="note">I do this every time</span>
+<section class="block" id="faq" style="padding-top:40px">
+  <div class="wrap">
+    <div class="block-head reveal"><h2>Questions people ask me</h2></div>
+    <div class="faq reveal">
+      <details><summary>Which email platform do you work in?</summary><p>Mostly Klaviyo. If you're on something else, tell me on the call. Sometimes moving is worth it and sometimes it isn't, and I'll say which.</p></details>
+      <details><summary>Who actually does the work?</summary><p>Me. I write it, build it and press send. When a send needs extra design hands I bring in a designer I trust, and I still check every email before it goes.</p></details>
+      <details><summary>Is there a contract?</summary><p>No. It's month to month. If the emails stop earning their keep, you stop paying me.</p></details>
+      <details><summary>What does it cost?</summary><p>One monthly fee. It depends on how much is already in place, so we work it out on the call once I've seen your account.</p></details>
+      <details><summary>Do you do SMS too?</summary><p>Yes, if it makes sense for your customers. Sometimes it doesn't, and I'll tell you that too.</p></details>
+      <details><summary>Why did you rewrite my email before we'd even spoken?</summary><p>Because telling you I'm good at this is easy. Showing you is better, and it gives us something real to talk about.</p></details>
     </div>
-    <div class="row flip big">
-      <div class="txt"><h2>The person writing it <span>also hits send.</span></h2>
-      <p>There's no account manager taking notes for someone else. I write it, build it in Klaviyo and press send myself.</p></div>
-      <span class="note">yes, the Klaviyo bit too</span>
-    </div>
-    <div class="row">
-      <div class="txt"><h2>No contract. On purpose.</h2>
-      <p>If the emails stop earning their keep, you stop paying me. Seems fair.</p></div>
-      <span class="note">so they'd better be good</span>
-    </div>
-  </section>
-
-  <section class="wrap close">
-    <h2>Your list cost you ad money. <span>Time it paid some rent.</span></h2>
-    <p>That was one email. Your cart reminders are next, if you want them.</p>
-    <div class="ctaline">
-      <a class="btn" href="https://cal.com/guidorook/30min" target="_blank" rel="noopener">Fix my other emails</a>
-      <span class="note">I answer these myself</span>
-    </div>
-    <span class="fine">Paid from month one. Month to month, no contract.</span>
-  </section>
-</main>
+  </div>
+</section>
 
 <footer><div class="wrap">
   <span>Guido Rook. Probably getting your abandoned cart emails right now.</span>
@@ -235,38 +370,33 @@ footer a{text-decoration:none}
 
 <script>
 (function(){
-  // receipt: today's date, and the brand from ?b=Brand+Name in the link
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // nav border once scrolled
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>8);},{passive:true});
+  // reveal on scroll
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});}
+  else{var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.15});els.forEach(function(e){ro.observe(e);});}
+  // receipt: date + brand from ?b=Brand
   try{
-    var d=new Date(), m=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+    var d=new Date(),m=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
     document.getElementById('day').textContent=d.getDate()+' '+m[d.getMonth()]+' '+d.getFullYear();
     var b=new URLSearchParams(location.search).get('b');
-    if(b){ b=b.replace(/[^\p{L}\p{N} &'.\-]/gu,'').slice(0,28).trim(); if(b) document.getElementById('who').textContent=b; }
+    if(b){b=b.replace(/[^\p{L}\p{N} &'.\-]/gu,'').slice(0,28).trim();if(b)document.getElementById('who').textContent=b;}
   }catch(e){}
   var till=document.getElementById('till');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce||!('IntersectionObserver' in window)){ till.classList.add('printed'); }
-  else{
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ till.classList.add('printed'); io.disconnect(); } }); },{threshold:.25});
-    io.observe(till);
-  }
-
-  // gallery: drag the rail sideways with a mouse; scrolling inside an email is the browser's own
-  var r=document.getElementById('rail'); if(!r) return;
-  var down=false,moved=false,sx=0,sl=0;
-  r.addEventListener('pointerdown',function(e){
-    if(e.pointerType!=='mouse'||e.button!==0) return;
-    down=true;moved=false;sx=e.clientX;sl=r.scrollLeft;
+  if(reduce||!('IntersectionObserver' in window)){till.classList.add('printed');}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){till.classList.add('printed');io.disconnect();}});},{threshold:.25});io.observe(till);}
+  // rails: mouse drag sideways; scrolling inside an email is the browser's own
+  [].forEach.call(document.querySelectorAll('.rail'),function(r){
+    var down=false,moved=false,sx=0,sl=0;
+    r.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button!==0)return;down=true;moved=false;sx=e.clientX;sl=r.scrollLeft;});
+    addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(!moved&&Math.abs(dx)>5){moved=true;r.classList.add('dragging');}if(moved){r.scrollLeft=sl-dx;e.preventDefault();}});
+    addEventListener('pointerup',function(){down=false;r.classList.remove('dragging');});
+    r.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();r.scrollBy({left:314,behavior:reduce?'auto':'smooth'});}if(e.key==='ArrowLeft'){e.preventDefault();r.scrollBy({left:-314,behavior:reduce?'auto':'smooth'});}});
   });
-  window.addEventListener('pointermove',function(e){
-    if(!down) return;
-    var dx=e.clientX-sx;
-    if(!moved&&Math.abs(dx)>5){ moved=true; r.classList.add('dragging'); }
-    if(moved){ r.scrollLeft=sl-dx; e.preventDefault(); }
-  });
-  window.addEventListener('pointerup',function(){ down=false; r.classList.remove('dragging'); });
-  function step(dir){ var c=r.querySelector('.card'); var w=c?c.getBoundingClientRect().width+24:314; r.scrollBy({left:dir*w,behavior:reduce?'auto':'smooth'}); }
-  document.getElementById('prev').addEventListener('click',function(){step(-1);});
-  document.getElementById('next').addEventListener('click',function(){step(1);});
-  r.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){e.preventDefault();step(1);} if(e.key==='ArrowLeft'){e.preventDefault();step(-1);} });
 })();
 </script>
+</body>
+</html>
